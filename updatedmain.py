@@ -1,6 +1,9 @@
 import streamlit as st
 import csv
 from transformers import pipeline
+import pandas as pd
+import numpy as np
+
 
 # Function to display recommendations based on user answers
 def show_recommendations():
@@ -364,20 +367,19 @@ elif selected_page == "Chatbot":
             st.text_area("Chatbot Response", value=chatbot_response, height=200, max_chars=None)
         else:
             st.warning("Please enter a question.")
-
-
-
-     # Summarizer page
+    
+ 
+    # Summarizer page
 
     st.header("Text Summarizer")
 
     # Text input from the user
-    user_input = st.text_area("Enter text to summarize", "")
+    user_input = st.text_area("Enter text to summarize", height=200)
 
     # Summarize button
     if st.button("Summarize"):
         # Load the summarization pipeline (using Hugging Face Transformers)
-        summarizer = pipeline("summarization")
+        summarizer = pipeline("summarization", model="facebook/bart-large-cnn", framework="tf")
 
         # Generate the summary with a maximum length of 3000 characters (approximately 3000 words)
         summary = summarizer(user_input, max_length=3000, min_length=30, do_sample=False)[0]['summary_text']
@@ -385,6 +387,7 @@ elif selected_page == "Chatbot":
         # Display the summary
         st.subheader("Summary:")
         st.write(summary)
+
 
 
 
