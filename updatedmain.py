@@ -379,7 +379,7 @@ elif selected_page == "Chatbot":
     # Summarize button
     if st.button("Summarize"):
         # Load the summarization pipeline (using Hugging Face Transformers)
-        summarizer = pipeline("summarization", model="facebook/bart-large-cnn", framework="tf")
+        summarizer = pipeline("summarization")
 
         # Generate the summary with a maximum length of 3000 characters (approximately 3000 words)
         summary = summarizer(user_input, max_length=3000, min_length=30, do_sample=False)[0]['summary_text']
