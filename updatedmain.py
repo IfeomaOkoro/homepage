@@ -1,8 +1,7 @@
 import streamlit as st
 import csv
 from transformers import pipeline
-import pandas as pd
-import numpy as np
+
 
 
 # Function to display recommendations based on user answers
