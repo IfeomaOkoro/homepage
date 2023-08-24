@@ -23,7 +23,7 @@ if selected_page == "Home":
     st.title("Adopting AI and Machine Learning for your Business")
     st.markdown("""This free online tool provides guidance and resources to help your small and medium enterprise assess readiness and adopt AI/ML technologies in a responsible and effective manner. By answering a few short questions, you'll receive a customised AI readiness score and recommendations to get started on your AI journey.""")
     st.markdown("""Assess your AI readiness in 5 minutes""")
-    st.markdown("Due to resource overload, the AI readiness assessment test is hosted [here](https://updatedaimlweb.streamlit.app/). Thank you very much.")
+    st.markdown("Due to resource overload, the AI readiness assessment test is hosted [here](https://updatedaiml.streamlit.app/). Thank you very much.")
 
   
 
